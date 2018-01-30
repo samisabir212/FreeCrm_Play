@@ -24,7 +24,7 @@ public class TestBase {
 	public static WebEventListener eventListener;
 	public static Logger log = Logger.getLogger(TestBase.class);
 
-	
+	public String s = null;
 	
 	
 	public TestBase() throws IOException {
