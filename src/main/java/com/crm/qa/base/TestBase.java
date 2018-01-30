@@ -52,7 +52,7 @@ public class TestBase {
 		
 		String browserName = prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("chrome")) {
-	        System.setProperty("webdriver.chrome.driver", "/Users/sami/Desktop/RocketLauncher/Mac/Drivers/chromedriver2_26");
+	        System.setProperty("webdriver.chrome.driver", "/Users/sami/git/FreeCrm_Git/chromedriver2_26");
 	        	driver = new ChromeDriver();
 	        	
 		}else if(browserName.equalsIgnoreCase("firefox")){
