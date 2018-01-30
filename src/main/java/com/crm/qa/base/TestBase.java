@@ -20,9 +20,9 @@ public class TestBase {
 	
 	public static WebDriver driver;
 	public static Properties prop;
-	public static EventFiringWebDriver e_driver;
-	public static WebEventListener eventListener;
-	public static Logger log = Logger.getLogger(TestBase.class);
+	//public static EventFiringWebDriver e_driver;
+	//public static WebEventListener eventListener;
+	//public static Logger log = Logger.getLogger(TestBase.class);
 
 	public String s = null;
 	
@@ -47,7 +47,7 @@ public class TestBase {
 	//initialization method 'this is called in every "BeforeMethod" Method'
 	public static void initialization() throws IOException {
 		
-		log.info("****************************** Starting test cases execution  *****************************************");
+		//log.info("****************************** Starting test cases execution  *****************************************");
 
 		
 		String browserName = prop.getProperty("browser");
@@ -61,10 +61,10 @@ public class TestBase {
 	       
 		}
 		
-		e_driver = new EventFiringWebDriver(driver);
-		eventListener= new WebEventListener();
-		e_driver.register(eventListener);
-		driver = e_driver;
+		//e_driver = new EventFiringWebDriver(driver);
+		//eventListener= new WebEventListener();
+		//e_driver.register(eventListener);
+		//driver = e_driver;
 		
 		 
         driver.manage().window().maximize();
