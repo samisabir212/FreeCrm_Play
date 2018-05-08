@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -32,11 +33,14 @@ public class ContactsPageTest extends TestBase {
 	
 	String sheetName = "contacts";
 	
-
+	@BeforeClass
+	public void beforeclass() throws IOException {
+		initialization();
+	}
 	
 	@BeforeMethod
 	public void setUp() throws IOException, InterruptedException {
-		initialization();
+		
 		loginPage = new LoginPage();
 		testUtil = new TestUtil();
 		contactsPage = new ContactsPage();
@@ -53,7 +57,7 @@ public class ContactsPageTest extends TestBase {
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = false,groups= {"smoke"})
 	public void verifyContactsPageLabel_isDisplayed() {
 		
 		boolean label = contactsPage.verifyContactsPageLabel();		
@@ -63,7 +67,7 @@ public class ContactsPageTest extends TestBase {
 	}
 	
 	//verify fred oz is in your contacts list
-	@Test(enabled = false)
+	@Test(enabled = true,groups= {"smoke"})
 	public void verifyContactName() throws InterruptedException {
 		
 		contactsPage.selectContactByName("Fred oz");
@@ -80,7 +84,7 @@ public class ContactsPageTest extends TestBase {
 	}
 	
 	
-	@Test(enabled = true, dataProvider="getCRMTestData")
+	@Test(enabled = false, dataProvider="getCRMTestData",groups= {"smoke","p1"})
 	public void validateCreateNewContact(String title, String firstName, String lastName, String company) throws InterruptedException{
 		
 		homePage.clickOnNewContactLink();

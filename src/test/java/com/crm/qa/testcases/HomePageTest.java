@@ -57,8 +57,8 @@ public class HomePageTest extends TestBase {
 	}
 	
 	
-	@Test(priority=1, enabled = false)
-	public void veridyHomePageLogo() {
+	@Test(priority=1, enabled = false,groups= {"smoke","p3"})
+	public void verifyHomePageLogo() {
 		
 		boolean validateLogo = homePage.validate_CRMLOGO();
 		if(validateLogo == true) {
@@ -70,16 +70,17 @@ public class HomePageTest extends TestBase {
 		
 		
 		
+		
 	}
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true,groups= {"p3"})
 	public void verifyHomePageTitle() {
 		String title = homePage.verifyHomePageTitle();
 		Assert.assertEquals(title, "CRMPRO");
 		
 	}
 	
-	@Test(priority=3, enabled = false)
+	@Test(priority=3, enabled = false,groups= {"smoke"})
 	public void veridyLoggedInUser() {
 		testUtil.switchToIframe("mainpanel");
 		boolean user = homePage.validateUserByText();
@@ -93,7 +94,7 @@ public class HomePageTest extends TestBase {
 	
 	
 	
-	@Test(priority=4,enabled=false)
+	@Test(priority=4,enabled=false,groups= {"smoke"})
 	public void clickDeals() throws IOException {
 		homePage.clickDeals();
 		String dealsTitle = driver.getTitle();

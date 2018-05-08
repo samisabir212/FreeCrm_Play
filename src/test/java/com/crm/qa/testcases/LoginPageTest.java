@@ -55,7 +55,7 @@ public class LoginPageTest extends TestBase {
 		
 	}
 	
-	@Test(priority=1,enabled=true)
+	@Test(priority=1,enabled=false,groups= {"smoke","reg","p1"})
 	public void valid_User_login_Test() throws InterruptedException, IOException {
 		
 	homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));

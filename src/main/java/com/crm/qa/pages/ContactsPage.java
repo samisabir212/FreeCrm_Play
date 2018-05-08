@@ -40,6 +40,7 @@ public class ContactsPage extends TestBase {
 	
 	//verify contacts label
 	public boolean verifyContactsPageLabel() {
+		
 		boolean label = contactsLabel.isDisplayed();
 		return label;
 		

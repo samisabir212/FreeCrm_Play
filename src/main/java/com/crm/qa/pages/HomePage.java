@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.crm.qa.pages.CalenderPage;
 import com.crm.qa.pages.DealsPage;
 import com.crm.qa.base.TestBase;
@@ -13,6 +16,8 @@ import com.crm.qa.util.TestUtil;
 
 public class HomePage extends TestBase  {
 	
+	
+	private static WebDriverWait wait = new WebDriverWait(driver, 12);
 	
 	TestUtil testUtil = new TestUtil();
 	
@@ -40,8 +45,22 @@ public class HomePage extends TestBase  {
 	@FindBy(xpath="//a[contains(text(),'Tasks')]")
 	WebElement tasksLink;
 	//'new contact' link from contact drop down after mouse hover
-	@FindBy(xpath=".//*[@id='navmenu']/ul/li[4]/ul/li[1]/a")
+	@FindBy(xpath=".//a[contains(text(),'New Contact')]")
 	WebElement newContactLink;
+	
+	//features link
+	@FindBy(xpath="//a[contains(text(),'Features')]")
+	WebElement features_Link;
+	//Sign Up link
+	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
+	WebElement signUp_Link;
+	//Pricing link
+	@FindBy(xpath="//a[contains(text(),'Pricing')]")
+	WebElement pricing_Link;
+	//Customers Link
+	@FindBy(xpath="//a[contains(text(),'Customers')]")
+	WebElement customers_link;
+	
 	
 	
 	
@@ -97,14 +116,16 @@ public class HomePage extends TestBase  {
 	}
 	
 	public void clickOnNewContactLink() throws InterruptedException{
+		
+		wait.until(ExpectedConditions.visibilityOf(contactsLink));
+		wait.until(ExpectedConditions.elementToBeClickable(contactsLink));
 		Actions action = new Actions(driver);
 		action.moveToElement(contactsLink).build().perform();
 		testUtil.sleepFor(3);
+		wait.until(ExpectedConditions.visibilityOf(newContactLink));
+		wait.until(ExpectedConditions.elementToBeClickable(newContactLink));
 		newContactLink.click();
-		
-	
 
-	
 	}
 
 

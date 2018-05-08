@@ -24,21 +24,7 @@ public class LoginPage extends TestBase {
 	//'FreeCRM' logo
 	@FindBy(xpath="//a[@class='navbar-brand']/img")
 	WebElement freeCRM_Logo;
-	//features link
-	@FindBy(xpath="//a[contains(text(),'Features')]")
-	WebElement features_Link;
-	//Sign Up link
-	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
-	WebElement signUp_Link;
-	//Pricing link
-	@FindBy(xpath="//a[contains(text(),'Pricing')]")
-	WebElement pricing_Link;
-	//Customers Link
-	@FindBy(xpath="//a[contains(text(),'Customers')]")
-	WebElement customers_link;
-	//Contact Link
-	@FindBy(xpath="//a[contains(text(),'Contact')]")
-	WebElement contact_Link;
+
 	//'Forgot Password?' text
 	@FindBy(xpath="//a[contains(text(),'Forgot Password?')]")
 	WebElement forgotPassword_txt;
